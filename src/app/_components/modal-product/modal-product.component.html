@@ -1,0 +1,39 @@
+@if (product){
+<div class="modal-header">
+    <h4 class="modal-title">{{ product.title }}</h4>
+    <button type="button" class="btn btn-success" (click)="activeModal.dismiss('Cross click')">X</button>
+</div>
+<div class="modal-body">
+    <div class="row m-3">
+        <div class="col text-center">
+            <img class="product-image img-fluid" alt="product-image" [src]="product.image" />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col text-center">
+            <label>
+                {{product.category}}
+            </label>
+        </div>
+    </div>
+    <p>
+        {{product.description}}
+    </p>
+    <div class="row">
+        <div class="col-6">
+            Price:
+        </div>
+        <div class="col-6 text-end">
+            $ {{product.price}}
+        </div>
+    </div>
+</div>
+}@else{
+<div class="modal-header">
+    <h4 class="modal-title">Aviso!</h4>
+    <button type="button" class="btn btn-success" (click)="activeModal.dismiss('Cross click')">X</button>
+</div>
+<div class="modal-body">
+    el producto no se puede ver
+</div>
+}
